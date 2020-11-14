@@ -6,6 +6,7 @@ const Blurb = styled(Body18)`
   @media only screen and (max-width: ${({ theme }) =>
       theme.creators.breakpoints.creatorsMobile}) {
     font-size: 15px;
+    margin: 1rem 0;
   }
 `;
 

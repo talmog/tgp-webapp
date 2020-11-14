@@ -87,7 +87,7 @@ const JoinBodyWrapper = styled(BodyWrapper)`
     padding: 3rem 7rem;
     @media only screen and (max-width: ${({ theme }) =>
     theme.creators.breakpoints.creatorsMobile}) {
-      padding: 3rem;
+      padding: 1rem;
     }
   }
 `;
@@ -116,7 +116,7 @@ function Join({
             Join our community of creators <br /> working together for the Good
             of all.
           </Blurb>
-          <Heads />
+          <Heads isJoin />
           <JoinButtonWrapper>
             <SocialButton
               channel="facebook"

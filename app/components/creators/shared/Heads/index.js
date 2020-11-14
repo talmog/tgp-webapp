@@ -6,6 +6,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import SampleAvatarImg1 from 'images/avatars/ellipse_1.png';
 import SampleAvatarImg2 from 'images/avatars/ellipse_5.png';
@@ -27,9 +28,13 @@ const AvatarsWrapper = styled.div`
   margin: 0 auto;
   margin-top: 4rem;
   @media only screen and (max-width: ${({ theme }) =>
-      theme.creators.breakpoints.creatorsMobile}) {
+    theme.creators.breakpoints.creatorsMobile}) {
     padding: 0 1.5rem;
     margin-bottom: 2.5rem;
+    &.join {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
   }
 `;
 
@@ -40,16 +45,16 @@ const Avatar = styled(LazyLoadImage)`
   margin-right: 1rem;
   margin-bottom: 0.5rem;
   @media only screen and (max-width: ${({ theme }) =>
-      theme.creators.breakpoints.creatorsMobile}) {
+    theme.creators.breakpoints.creatorsMobile}) {
     width: 24px;
     height: 24px;
     margin-right: 0.7rem;
   }
 `;
 
-function Heads() {
+function Heads({ isJoin }) {
   return (
-    <AvatarsWrapper>
+    <AvatarsWrapper className={isJoin && 'join'}>
       <Avatar src={SampleAvatarImg1} alt="avatar" />
       <Avatar src={SampleAvatarImg2} alt="avatar" />
       <Avatar src={SampleAvatarImg3} alt="avatar" />
@@ -65,6 +70,8 @@ function Heads() {
   );
 }
 
-Heads.propTypes = {};
+Heads.propTypes = {
+  isJoin: PropTypes.bool
+};
 
 export default Heads;

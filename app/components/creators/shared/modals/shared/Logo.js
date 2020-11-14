@@ -8,6 +8,7 @@ const Logo = styled.img`
       theme.creators.breakpoints.creatorsMobile}) {
     height: 80px;
     width: 100px;
+    margin-bottom: 0.5rem;
   }
 `;
 
